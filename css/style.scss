@@ -1,0 +1,109 @@
+$shoes_color:#ecd3d4;
+$large_desktop:1540px;
+
+@mixin desktop{
+    @media screen and(max-width:$large-desktop) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.form_container {
+    background: linear-gradient(150deg,rgba(255, 196, 205, 0.75),rgba(255, 123, 200, 0.6)),url('../Images/pattern_bg.png');
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+form {
+    background-color: #fff;
+    box-shadow: 2px 2px 10px 5px rosybrown;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 72.5vh;
+    width: 20vw;
+    padding: 1em;
+    h1{
+        align-self: center;
+        font-size: 2.25em;
+    }
+    
+    input{
+        padding: .2em 0;
+        border:1px solid rgb(202, 202, 202);
+        
+        &:focus{
+            outline:none;
+        }
+    }
+    
+    .email_container{
+        padding: .1em;
+        display: flex;
+        flex-direction: column;
+        
+        input{
+            font-style: italic;
+            letter-spacing:1px;
+            font-size: 1em;
+        }
+    }
+    .password_container{
+        padding: .1em;
+        display: flex;
+        flex-direction: column;
+        .input_and_button{
+            display: flex;
+            justify-content: space-between;
+            input{
+                width: 82.5%;
+                letter-spacing:1px;
+                font-size: 1em;
+            }
+            .btn_show_Password_Toggle{
+                width: 15%;
+                display: flex;
+                justify-content: center;
+                align-items:center;
+                background-color: #fff;
+                border: 1px solid rgb(141, 141, 141);
+                border-radius: 3px;
+                cursor: pointer;
+                i{
+                    color: rgb(255, 139, 139);
+                }
+            }
+        }
+    }
+    
+    input[type="submit"]{
+        border: none;
+        color: white;
+        font-size: 1.25em;
+        background-color: #fd6eb4;
+        border-radius: 2px;
+        transition: all .15s linear;
+        &:hover{
+            transform: scale(0.975);
+            background-color: darken(#fd6eb4,5%);
+        }           
+    }
+    
+    p.message{
+        opacity: 0;
+        transition: opacity .5s;
+    }
+    
+}
+
